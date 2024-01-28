@@ -17,10 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import avocat_list
-
+from .views import client_list
 
 from . import views
 urlpatterns = [
-    path('avocat-list/', avocat_list, name='avocat_list'),
+    path('avocati/', avocat_list, name='avocat_list'),
+    path('clienti/', client_list, name='client_list'),
     path('',views.index, name='index')
 ]
