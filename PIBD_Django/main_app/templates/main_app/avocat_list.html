@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avocati List</title>
+</head>
+<body>
+    <h1>Avocati List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nume</th>
+                <th>Prenume</th>
+                <th>Telefon</th>
+                <th>CNP</th>
+                <th>Email</th>
+                <th>Specializare</th>
+                <th>Speta</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for avocat in avocati %}
+                <tr>
+                    <td>{{ avocat.id_avocat }}</td>
+                    <td>{{ avocat.nume }}</td>
+                    <td>{{ avocat.prenume }}</td>
+                    <td>{{ avocat.telefon }}</td>
+                    <td>{{ avocat.cnp }}</td>
+                    <td>{{ avocat.email }}</td>
+                    <td>{{ avocat.specializare }}</td>
+                    <td>{{ avocat.speta }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
