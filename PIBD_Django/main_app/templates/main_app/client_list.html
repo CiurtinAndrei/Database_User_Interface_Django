@@ -6,7 +6,8 @@
 <body>
 
 <h1>Client List</h1>
-
+<a href="{% url 'index' %}"><button>Return to Homepage</button></a>
+<a href="{% url 'add_client' %}"><button>Add New Client</button></a>
 <table border="1">
     <thead>
         <tr>
@@ -29,6 +30,12 @@
                 <td>{{ client.telefon }}</td>
                 <td>{{ client.cnp }}</td>
                 <td>{{ client.adresa }}</td>
+
+                <td>
+                    <a href="{% url 'modify_client' client.id_client %}"><button>Modify</button></a>
+                    <a href="{% url 'delete_client' client.id_client %}"><button>Delete</button></a>
+                </td>
+
             </tr>
         {% endfor %}
     </tbody>

@@ -1,10 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Contract List</title>
 </head>
 <body>
 
-</body>
-</html>
+<h1>Contract List</h1>
+<a href="{% url 'index' %}"><button>Return to Homepage</button></a>
+<a href="{% url 'add_contract' %}"><button>Add New Contract</button></a>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID Contract</th>
+            <th>ID Avocat</th>
+            <th>Nume Avocat</th>
+            <th>Prenume Avocat</th>
+            <th>ID Client</th>
+            <th>Nume Client</th>
+            <th>Prenume Client</th>
+            <th>Valoare</th>
+            <th>Data Start</th>
+            <th>Data Sfarsit</th>
+            <th>Judecatorie</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for contract in contracte %}
+            <tr>
+                <td>{{ contract.id_contract }}</td>
+                <td>{{ contract.id_avocat_ctr.id_avocat }}</td>
+                <td>{{ contract.id_avocat_ctr.nume }}</td>
+                <td>{{ contract.id_avocat_ctr.prenume }}</td>
+                <td>{{ contract.id_client_ctr.id_client }}</td>
+                <td>{{ contract.id_client_ctr.nume }}</td>
+                <td>{{ contract.id_client_ctr.prenume }}</td>
+                <td>{{ contract.valoare }}</td>
+                <td>{{ contract.data_start }}</td>
+                <td>{{ contract.data_sfarsit|default:"In desfasurare" }}</td>
+                <td>{{ contract.judecatorie }}</td>
+
+                <td>
+                     <a href="{% url 'modify_contract' contract.id_contract %}"><button>Modify</button></a>
+                     <a href="{% url 'delete_contract' contract.id_contract %}"><button>Delete</button></a>
+                </td>
+
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

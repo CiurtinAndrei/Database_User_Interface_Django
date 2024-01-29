@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avocati List</title>
+    <title>Avocat List</title>
 </head>
 <body>
-    <h1>Avocati List</h1>
+    <h1>Avocat List</h1>
+    <a href="{% url 'index' %}"><button>Return to Homepage</button></a>
+    <a href="{% url 'add_avocat' %}"><button>Add New Avocat</button></a>
     <table border="1">
         <thead>
             <tr>
@@ -32,6 +34,12 @@
                     <td>{{ avocat.email }}</td>
                     <td>{{ avocat.specializare }}</td>
                     <td>{{ avocat.speta }}</td>
+
+                    <td>
+                          <a href="{% url 'modify_avocat' avocat.id_avocat %}"><button>Modify</button></a>
+                          <a href="{% url 'delete_avocat' avocat.id_avocat %}"><button>Delete</button></a>
+                     </td>
+
                 </tr>
             {% endfor %}
         </tbody>

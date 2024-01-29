@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modify Client</title>
+</head>
+<body>
+
+<h1>Modify Client</h1>
+
+<form method="post" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Modify Client">
+</form>
+
+<a href="{% url 'client_list' %}">Back to Client List</a>
+
+</body>
+</html>

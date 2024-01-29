@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Avocat</title>
+</head>
+<body>
+
+<h1>Add Avocat</h1>
+
+<form method="post" action="{% url 'add_avocat' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Add Avocat">
+</form>
+
+<a href="{% url 'avocat_list' %}">Back to Avocat List</a>
+
+</body>
+</html>
