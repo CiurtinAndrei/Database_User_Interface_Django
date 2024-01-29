@@ -6,7 +6,7 @@ class Avocat(models.Model):
     prenume = models.CharField(max_length=64)
     telefon = models.CharField(max_length=64)
     cnp = models.CharField(max_length=64)
-    email = models.CharField(max_length=64)
+    email = models.EmailField(max_length=64)
     specializare = models.CharField(max_length=64)
     speta = models.CharField(max_length=64)
 
@@ -20,7 +20,7 @@ class Client(models.Model):
     id_client = models.BigAutoField(primary_key=True)
     nume = models.CharField(max_length=64)
     prenume = models.CharField(max_length=64)
-    email = models.CharField(max_length=64)
+    email = models.EmailField(max_length=64)
     telefon = models.CharField(max_length=64)
     cnp = models.CharField(max_length=64)
     adresa = models.CharField(max_length=64)
