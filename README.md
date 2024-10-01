@@ -1,4 +1,4 @@
-# Proiect_PIBD_NodeJS
+# Proiect_PIBD_Django
 
 This is a CRUD web application developed in **Python** with the use of the **Django** framework on the backend and **HTML + CSS** on the frontend. This application successfully implements all CRUD functions: **create**, **read**, **update** and **delete** for a simple database consisting of 3 tables: **Lawyer**, **Client** and **Contract**.
 
